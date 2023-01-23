@@ -151,6 +151,11 @@
       <artifactId>quarkus-kubernetes-client</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.quarkiverse.helm</groupId>
+      <artifactId>quarkus-helm</artifactId>
+      <version>0.2.1</version>
+    </dependency>
+    <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-opentelemetry-exporter-otlp</artifactId>
     </dependency>
