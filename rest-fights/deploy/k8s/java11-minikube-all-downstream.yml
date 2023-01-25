@@ -138,7 +138,8 @@ metadata:
     app.quarkus.io/vcs-ref: main
     app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
     app.openshift.io/connects-to: "villains-db,otel-collector"
-    app.quarkus.io/build-timestamp: 2023-01-17 - 14:13:48 +0000
+    app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+    app.quarkus.io/build-timestamp: 2023-01-25 - 16:14:13 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8084"
@@ -164,7 +165,8 @@ spec:
         app.quarkus.io/vcs-ref: main
         app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
         app.openshift.io/connects-to: "villains-db,otel-collector"
-        app.quarkus.io/build-timestamp: 2023-01-17 - 14:13:48 +0000
+        app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+        app.quarkus.io/build-timestamp: 2023-01-25 - 16:14:13 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8084"
@@ -184,10 +186,10 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
           envFrom:
-            - secretRef:
-                name: rest-villains-config-creds
             - configMapRef:
                 name: rest-villains-config
+            - secretRef:
+                name: rest-villains-config-creds
           image: quay.io/quarkus-super-heroes/rest-villains:java11-latest
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -228,7 +230,8 @@ metadata:
     app.quarkus.io/vcs-ref: main
     app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
     app.openshift.io/connects-to: "villains-db,otel-collector"
-    app.quarkus.io/build-timestamp: 2023-01-17 - 14:13:48 +0000
+    app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+    app.quarkus.io/build-timestamp: 2023-01-25 - 16:14:13 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8084"
@@ -394,7 +397,8 @@ metadata:
     app.quarkus.io/vcs-ref: main
     app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
     app.openshift.io/connects-to: "heroes-db,otel-collector"
-    app.quarkus.io/build-timestamp: 2023-01-17 - 14:14:06 +0000
+    app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+    app.quarkus.io/build-timestamp: 2023-01-25 - 16:14:43 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8083"
@@ -420,7 +424,8 @@ spec:
         app.quarkus.io/vcs-ref: main
         app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
         app.openshift.io/connects-to: "heroes-db,otel-collector"
-        app.quarkus.io/build-timestamp: 2023-01-17 - 14:14:06 +0000
+        app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+        app.quarkus.io/build-timestamp: 2023-01-25 - 16:14:43 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8083"
@@ -440,10 +445,10 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
           envFrom:
-            - secretRef:
-                name: rest-heroes-config-creds
             - configMapRef:
                 name: rest-heroes-config
+            - secretRef:
+                name: rest-heroes-config-creds
           image: quay.io/quarkus-super-heroes/rest-heroes:java11-latest
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -484,7 +489,8 @@ metadata:
     app.quarkus.io/vcs-ref: main
     app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
     app.openshift.io/connects-to: "heroes-db,otel-collector"
-    app.quarkus.io/build-timestamp: 2023-01-17 - 14:14:06 +0000
+    app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+    app.quarkus.io/build-timestamp: 2023-01-25 - 16:14:43 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8083"
@@ -785,7 +791,8 @@ metadata:
     app.quarkus.io/vcs-ref: main
     app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
     app.openshift.io/connects-to: "fights-db,fights-kafka,apicurio,rest-villains,rest-heroes,otel-collector"
-    app.quarkus.io/build-timestamp: 2023-01-17 - 14:14:26 +0000
+    app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+    app.quarkus.io/build-timestamp: 2023-01-25 - 16:15:18 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8082"
@@ -811,7 +818,8 @@ spec:
         app.quarkus.io/vcs-ref: main
         app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
         app.openshift.io/connects-to: "fights-db,fights-kafka,apicurio,rest-villains,rest-heroes,otel-collector"
-        app.quarkus.io/build-timestamp: 2023-01-17 - 14:14:26 +0000
+        app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+        app.quarkus.io/build-timestamp: 2023-01-25 - 16:15:18 +0000
         prometheus.io/scrape: "true"
         prometheus.io/path: /q/metrics
         prometheus.io/port: "8082"
@@ -831,10 +839,10 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
           envFrom:
-            - secretRef:
-                name: rest-fights-config-creds
             - configMapRef:
                 name: rest-fights-config
+            - secretRef:
+                name: rest-fights-config-creds
           image: quay.io/quarkus-super-heroes/rest-fights:java11-latest
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -875,7 +883,8 @@ metadata:
     app.quarkus.io/vcs-ref: main
     app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
     app.openshift.io/connects-to: "fights-db,fights-kafka,apicurio,rest-villains,rest-heroes,otel-collector"
-    app.quarkus.io/build-timestamp: 2023-01-17 - 14:14:26 +0000
+    app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+    app.quarkus.io/build-timestamp: 2023-01-25 - 16:15:18 +0000
     prometheus.io/scrape: "true"
     prometheus.io/path: /q/metrics
     prometheus.io/port: "8082"

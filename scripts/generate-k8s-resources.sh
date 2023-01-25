@@ -94,6 +94,7 @@ process_quarkus_project() {
     echo "Copying app generated input ($app_generated_input_file) to $project_output_file and $all_apps_output_file"
     cat $app_generated_input_file >> $project_output_file
     cat $app_generated_input_file >> $all_apps_output_file
+
   fi
 
   if [[ "$project" == "rest-fights" ]]; then

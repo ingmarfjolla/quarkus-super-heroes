@@ -1,0 +1,45 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels: {{- range $key, $val := .Values.app.labels }}
+{{ indent 2 $key }}: {{ $val | quote }}
+{{- end }}
+  name: villains-db
+spec:
+  ports:
+    - port: 5432
+      protocol: TCP
+      targetPort: 5432
+  selector:
+    name: villains-db
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    app.openshift.io/connects-to: "villains-db,otel-collector"
+    app.quarkus.io/vcs-ref: main
+    app.quarkus.io/vcs-url: https://github.com/quarkusio/quarkus-super-heroes
+    app.quarkus.io/commit-id: f9ba33ded3c72db4f3d1a66c3c0c3de29d993527
+    app.quarkus.io/build-timestamp: 2023-01-25 - 20:27:19 +0000
+    prometheus.io/scrape: "true"
+    prometheus.io/path: /q/metrics
+    prometheus.io/port: "8084"
+    prometheus.io/scheme: http
+  labels: {{- range $key, $val := .Values.app.labels }}
+{{ indent 2 $key }}: {{ $val | quote }}
+{{- end }}
+  name: rest-villains
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8084
+  selector:
+    app.kubernetes.io/name: rest-villains
+    app.kubernetes.io/part-of: villains-service
+    app.kubernetes.io/version: java11-latest
+  type: {{ .Values.app.serviceType }}
