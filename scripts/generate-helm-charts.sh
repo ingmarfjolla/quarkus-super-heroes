@@ -71,7 +71,8 @@ do_build() {
     -Dquarkus.knative.annotations.\"app.openshift.io/vcs-ref\"=$github_ref_name \
     -Dquarkus.helm.values.labels.paths=metadata.labels \
     -Dquarkus.helm.values.labels.value-as-list \
-    -Dquarkus.helm.version=1.0.0
+    -Dquarkus.helm.version=1.0.0 \
+    -Dquarkus.helm.values[0].profile=$deployment_type-$javaVersion
 }
 
 process_quarkus_project() {
